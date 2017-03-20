@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--亮蓝灰 -->
+    <color name="slategray">#C2C2C2</color>
+
+    <!--中暗蓝色 -->
+    <color name="lightslategray">#778899</color>
 </resources>

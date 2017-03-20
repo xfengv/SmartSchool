@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--主页tabs样式-->
+    <style name="main_bottom_tab">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/main_bottom_tab_font_size</item>
+        <item name="android:textColor">@color/main_bottom_tab_textcolor</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">@dimen/main_bottom_tab_padding_top</item>
+    </style>
+
 </resources>
