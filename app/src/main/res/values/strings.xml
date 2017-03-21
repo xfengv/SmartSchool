@@ -7,13 +7,17 @@
     <string name="navigation_about">关于</string>
 
     <!--主页tab-->
-    <dimen name="main_bottom_tabs_padding_bottom">5dp</dimen>
-    <dimen name="main_bottom_tab_padding_top">5dp</dimen>
-    <dimen name="main_bottom_tab_font_size">16sp</dimen>
+    <dimen name="main_bottom_tabs_padding_bottom">1dp</dimen>
+    <dimen name="main_bottom_tab_padding_top">2dp</dimen>
+    <dimen name="main_bottom_tab_font_size">14sp</dimen>
     <dimen name="main_bottom_tab_drawable_padding">2dp</dimen>
 
     <!--tabs 简便用 first second third-->
     <string name="main_tab_first">新闻</string>
     <string name="main_tab_second">热点</string>
     <string name="main_tab_third">我</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+
+
 </resources>

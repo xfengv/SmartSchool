@@ -8,5 +8,24 @@
     <color name="slategray">#C2C2C2</color>
 
     <!--中暗蓝色 -->
-    <color name="lightslategray">#778899</color>
+    <color name="lightslategray">#55778899</color>
+
+    <color name="window_background">@android:color/white</color>
+    <color name="window_background_dark">#403f4d</color>
+
+    <color name="accent">#03A9F4</color>
+    <color name="primary">#E91E63</color>
+    <color name="primary_dark">#C2185B</color>
+    <color name="fabCircleColor_light">#f50057</color>
+    <color name="primary_text">#212121</color>
+    <color name="icons">#FFFFFF</color>
+
+    <!--基础色-->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+
+    <!--列表展示的浅灰色背景 让白色的item更加突出-->
+    <color name="list_background">#E5E5E5</color>
+    <color name="list_background_dark">@color/window_background_dark</color>
 </resources>

@@ -16,6 +16,27 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             >
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--toolbar-->
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="?attr/colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/MyOptionMenuStyle"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.AppBarLayout>
+
 
             <FrameLayout
                 android:id="@+id/frame_content"
@@ -45,8 +66,9 @@
             <RadioButton
                 android:id="@+id/rb_tab_common"
                 style="@style/main_bottom_tab"
-                android:checked="false"
+                android:checked="true"
                 android:drawableTop="@drawable/tab_first_selector"
+
                 android:text="@string/main_tab_first"/>
 
             <RadioButton
