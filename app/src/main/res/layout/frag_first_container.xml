@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:fillViewport="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:tabMode="scrollable" />
+    <!-- 指示器的颜色是有 theme 的colorAccent指定的，由 style 指定方便切换夜间模式-->
+    <!--（指示器下表的颜色）下方滚动的下划线颜色 app:tabIndicatorColor="@color/mediumseagreen"-->
+    <!--tab被选中后，文字的颜色 app:tabSelectedTextColor="@color/white"-->
+    <!--未选中后，文字的颜色 app:tabTextColor="@color/slategray"-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_article"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
