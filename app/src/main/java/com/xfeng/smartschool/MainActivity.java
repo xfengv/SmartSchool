@@ -11,9 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.xfeng.smartschool.fragment.NewsFragment;
+import com.xfeng.smartschool.fragment.SmartServiceFragment;
+import com.xfeng.smartschool.fragment.StudentGuideFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,15 +25,16 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle toggle;//代替监听器
     private RadioGroup mMainRadios;
+    private static final String savedTab = "savedTab";
     private FragmentPagerAdapter mFragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
         @Override
         public Fragment getItem(int position) {
             if (position == R.id.rb_tab_common) {
                 return NewsFragment.newInstance("FirstFragment");
             } else if (position == R.id.rb_tab_sale) {
-                return NewsFragment.newInstance("FirstFragment");
+                return SmartServiceFragment.newInstance("SecondFragment");
             } else {
-                return NewsFragment.newInstance("FirstFragment");
+                return StudentGuideFragment.newInstance("ThirdFragment");
             }
         }
         @Override
@@ -39,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     private FrameLayout mFrameComtent;
+    private RadioButton mNewsButton;
+    private RadioButton mSmartServiceButton;
+    private RadioButton mStudentGuideButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         initUI();
         setListener();
         initToolbar();
+
+        //mNewsButton.performClick();
     }
 
     private void setListener() {
@@ -67,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mMainRadios = (RadioGroup) findViewById(R.id.main_radios);
         mFrameComtent = (FrameLayout) findViewById(R.id.frame_content);
+        mNewsButton = (RadioButton) findViewById(R.id.radioButton1);
+        mSmartServiceButton = (RadioButton) findViewById(R.id.radioButton2);
+        mStudentGuideButton = (RadioButton) findViewById(R.id.radioButton3);
     }
 
     private void initToolbar() {

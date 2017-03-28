@@ -25,7 +25,7 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -39,7 +39,7 @@
             android:text="RadioButton"/>
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

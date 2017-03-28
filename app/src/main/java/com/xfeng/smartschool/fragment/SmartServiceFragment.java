@@ -11,17 +11,17 @@ import com.xfeng.smartschool.R;
 
 /**
  * Created by xfeng
- * data 17/3/27 20:27
+ * data 17/3/27 20:54
  * email xfengv@yeah.net
  */
 
-public class NewsFragment extends Fragment{
+public class SmartServiceFragment extends Fragment {
     private static final String PARAM = "param";
     private String mParam;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_1_container, null);
+        View view = inflater.inflate(R.layout.frag_2_container, null);
         return view;
     }
 
@@ -34,8 +34,8 @@ public class NewsFragment extends Fragment{
     }
 
 
-    public static NewsFragment newInstance(String param) {
-        NewsFragment fragment = new NewsFragment();
+    public static SmartServiceFragment newInstance(String param) {
+        SmartServiceFragment fragment = new SmartServiceFragment();
         Bundle args = new Bundle();
         args.putString(PARAM, param);
         fragment.setArguments(args);
