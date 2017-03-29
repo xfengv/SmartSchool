@@ -13,9 +13,9 @@
     <dimen name="main_bottom_tab_drawable_padding">2dp</dimen>
 
     <!--tabs 简便用 first second third-->
-    <string name="main_tab_first">新闻</string>
-    <string name="main_tab_second">热点</string>
-    <string name="main_tab_third">我</string>
+    <string name="main_tab_first">校园资讯</string>
+    <string name="main_tab_second">智慧服务</string>
+    <string name="main_tab_third">新生引导</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
 

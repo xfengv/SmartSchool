@@ -5,7 +5,8 @@ import android.os.PersistableBundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,9 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.xfeng.smartschool.fragment.NewsFragment;
-import com.xfeng.smartschool.fragment.SmartServiceFragment;
-import com.xfeng.smartschool.fragment.StudentGuideFragment;
+import com.xfeng.smartschool.fragment.FragmentFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,32 +31,20 @@ public class MainActivity extends AppCompatActivity {
     RadioButton mNewsButton;
     RadioButton mSmartServiceButton;
     RadioButton mStudentGuideButton;
-    private FragmentPagerAdapter mFragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
-        @Override
-        public Fragment getItem(int position) {
-            if (position == R.id.radio_button1) {
-                return NewsFragment.newInstance("FirstFragment");
-            } else if (position == R.id.radio_button2) {
-                return SmartServiceFragment.newInstance("SecondFragment");
-            } else {
-                return StudentGuideFragment.newInstance("ThirdFragment");
-            }
-        }
-        @Override
-        public int getCount() {
-            return 3;
-        }
-    };
     private NavigationView mNavigationView;
+    private FragmentManager mFragmentManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mFragmentManager = getSupportFragmentManager();
+
         initUI();
         setListener();
         initToolbar();
+
 
         if (savedInstanceState == null) {
             //默认将第一个RadioButton设为选中
@@ -84,16 +71,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 Log.i(TAG,"选中 "+checkedId);
-                checked(checkedId);
+                FragmentTransaction transaction = mFragmentManager.beginTransaction();
+                Fragment fragment = FragmentFactory.getInstanceByIndex(checkedId);
+                transaction.replace(R.id.frame_content, fragment);
+                transaction.commit();
             }
         });
-    }
-
-    private void checked(int checkedId) {
-        Fragment fragment =
-                (Fragment) mFragmentPagerAdapter.instantiateItem(mFrameComtent, checkedId);
-        mFragmentPagerAdapter.setPrimaryItem(mFrameComtent, checkedId, fragment);
-        mFragmentPagerAdapter.finishUpdate(mFrameComtent);
     }
 
     private void initToolbar() {
@@ -119,6 +102,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         int position = savedInstanceState.getInt(MainActivity.savedTab);
-        checked(position);
+        Log.i(TAG,"onRestoreInstanceState position"+position);
     }
 }

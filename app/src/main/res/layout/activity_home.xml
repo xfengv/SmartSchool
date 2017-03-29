@@ -61,6 +61,7 @@
             android:layout_gravity="bottom"
             android:gravity="center"
             android:orientation="horizontal"
+            android:background="#339E9E9E"
             android:paddingBottom="@dimen/main_bottom_tabs_padding_bottom">
 
             <RadioButton
