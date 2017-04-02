@@ -4,10 +4,95 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <TextView
-        android:paddingTop="188dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fragment1"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="300dp"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
+弱小和无知，都不是生存的障碍，傲慢才是。"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -6,20 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
-        <android.support.design.widget.CoordinatorLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <!--toolbar-->
+
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -37,54 +38,52 @@
 
             </android.support.design.widget.AppBarLayout>
 
-
             <FrameLayout
                 android:id="@+id/frame_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_below="@+id/appbar"
+                android:layout_weight="1"
                 android:elevation="5dp"
                 android:scrollbars="none"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-        </android.support.design.widget.CoordinatorLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/lightslategray" />
-
-
-        <RadioGroup
-            android:id="@+id/main_radios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:background="#339E9E9E"
-            android:paddingBottom="@dimen/main_bottom_tabs_padding_bottom">
-
-            <RadioButton
-                android:id="@+id/radio_button1"
-                style="@style/main_bottom_tab"
-                android:drawableTop="@drawable/tab_first_selector"
-                android:text="@string/main_tab_first"/>
-
-            <RadioButton
-                android:id="@+id/radio_button2"
-                style="@style/main_bottom_tab"
-                android:drawableTop="@drawable/tab_second_selector"
-                android:text="@string/main_tab_second"/>
-
-            <RadioButton
-                android:id="@+id/radio_button3"
-                style="@style/main_bottom_tab"
-                android:drawableTop="@drawable/tab_third_selector"
-                android:text="@string/main_tab_third"/>
-        </RadioGroup>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightslategray"/>
 
 
-    </LinearLayout>
+            <RadioGroup
+                android:id="@+id/main_radios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#1100bbd2"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/main_bottom_tabs_padding_bottom">
+
+                <RadioButton
+                    android:id="@+id/radio_button1"
+                    style="@style/main_bottom_tab"
+                    android:drawableTop="@drawable/tab_first_selector"
+                    android:text="@string/main_tab_first"/>
+
+                <RadioButton
+                    android:id="@+id/radio_button2"
+                    style="@style/main_bottom_tab"
+                    android:drawableTop="@drawable/tab_second_selector"
+                    android:text="@string/main_tab_second"/>
+
+                <RadioButton
+                    android:id="@+id/radio_button3"
+                    style="@style/main_bottom_tab"
+                    android:drawableTop="@drawable/tab_third_selector"
+                    android:text="@string/main_tab_third"/>
+            </RadioGroup>
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
 
     <android.support.design.widget.NavigationView

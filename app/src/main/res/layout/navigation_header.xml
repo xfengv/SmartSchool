@@ -18,14 +18,14 @@
         app:roundingBorderWidth="2dp"
         app:roundingBorderColor="@color/icons"
         />-->
-    <!--<de.hdodenhof.circleimageview.CircleImageView-->
-        <!--android:id="@+id/profile_image"-->
-        <!--android:layout_width="72dp"-->
-        <!--android:layout_height="72dp"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:src="@drawable/protrait"-->
-        <!--app:border_color="@color/primary_light"-->
-        <!--app:border_width="2dp" />-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/log_school"
+        app:border_color="@color/primary_light"
+        app:border_width="2dp" />
 
     <TextView
         android:layout_marginTop="10dp"

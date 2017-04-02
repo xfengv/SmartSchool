@@ -1,4 +1,4 @@
-package com.xfeng.smartschool;
+package com.xfeng.smartschool.main.widget;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -13,15 +13,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.xfeng.smartschool.fragment.FragmentFactory;
+import com.xfeng.smartschool.R;
+import com.xfeng.smartschool.aboutme.widget.AboutMeFragment;
+import com.xfeng.smartschool.main.FragmentFactory;
+import com.xfeng.smartschool.images.widget.ImageFragment;
+import com.xfeng.smartschool.news.widget.NewsFragment;
+import com.xfeng.smartschool.main.view.MainView;
+import com.xfeng.smartschool.main.presenter.SidePresenter;
+import com.xfeng.smartschool.main.presenter.SidePreshenterImpl;
+import com.xfeng.smartschool.weather.widget.WeatherFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainView {
 
-    private static final String TAG = "XFeng";
+    private static final String TAG = "MainActivity";
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle toggle;//代替监听器
@@ -33,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton mStudentGuideButton;
     private NavigationView mNavigationView;
     private FragmentManager mFragmentManager;
+    private SidePresenter mSidePreshenter;
 
 
     @Override
@@ -41,11 +52,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mFragmentManager = getSupportFragmentManager();
 
+
         initUI();
         setListener();
         initToolbar();
-
-
         if (savedInstanceState == null) {
             //默认将第一个RadioButton设为选中
             mNewsButton.performClick();
@@ -53,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
             RadioButton radioButton = (RadioButton) findViewById(savedInstanceState.getInt(savedTab));
             radioButton.performClick();
         }
+
+        setupDrawerContent(mNavigationView);
+
+        mSidePreshenter = new SidePreshenterImpl(this);
     }
 
     private void initUI() {
@@ -75,14 +89,33 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = FragmentFactory.getInstanceByIndex(checkedId);
                 transaction.replace(R.id.frame_content, fragment);
                 transaction.commit();
+                if(mToolbar!=null){
+                    mToolbar.setTitle(getToolBarName(checkedId));
+                }
             }
         });
+    }
+
+    private int getToolBarName(int checkedId) {
+        switch (checkedId){
+            case R.id.radio_button1:
+                return R.string.main_tab_first;
+            case R.id.radio_button2:
+                return R.string.main_tab_second;
+            case R.id.radio_button3:
+                return R.string.main_tab_third;
+            default:
+                return R.string.main_tab_first;
+        }
     }
 
     private void initToolbar() {
         mToolbar.setTitle(R.string.app_name);
         mToolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
         mToolbar.setNavigationIcon(R.drawable.ic_menu);
+        //mToolbar.setSubtitle(R.string.main_tab_first);
+        //mToolbar.setLogo(R.drawable.log_school);
+
 
 
         //setTile 要在下面这句话上面，不然会失效
@@ -99,9 +132,51 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt(savedTab, mMainRadios.getCheckedRadioButtonId());
     }
 
+
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        Log.i(TAG,menuItem.getItemId()+"");
+                        mSidePreshenter.switchNavigation(menuItem.getItemId());
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
+    }
+
+
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        int position = savedInstanceState.getInt(MainActivity.savedTab);
-        Log.i(TAG,"onRestoreInstanceState position"+position);
+    public void switch2News() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new NewsFragment()).commit();
+        mToolbar.setTitle(R.string.navigation_news);
+        mMainRadios.setVisibility(View.VISIBLE);
+        Log.i(TAG,"切换到新闻");
+    }
+
+    @Override
+    public void switch2Images() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new ImageFragment()).commit();
+        mToolbar.setTitle(R.string.navigation_images);
+        mMainRadios.setVisibility(View.GONE);
+        Log.i(TAG,"切换到图片");
+    }
+
+    @Override
+    public void switch2Weather() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new WeatherFragment()).commit();
+        mToolbar.setTitle(R.string.navigation_weather);
+        mMainRadios.setVisibility(View.GONE);
+        Log.i(TAG,"切换到天气");
+    }
+
+    @Override
+    public void switch2About() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new AboutMeFragment()).commit();
+        mToolbar.setTitle(R.string.navigation_about);
+        mMainRadios.setVisibility(View.GONE);
+        Log.i(TAG,"切换到关于");
     }
 }

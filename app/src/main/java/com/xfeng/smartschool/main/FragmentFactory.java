@@ -1,8 +1,11 @@
-package com.xfeng.smartschool.fragment;
+package com.xfeng.smartschool.main;
 
 import android.support.v4.app.Fragment;
 
 import com.xfeng.smartschool.R;
+import com.xfeng.smartschool.Thacher.widget.SmartServiceFragment;
+import com.xfeng.smartschool.news.widget.NewsFragment;
+import com.xfeng.smartschool.studentGuid.widget.StudentGuideFragment;
 
 /**
  * Created by xfeng

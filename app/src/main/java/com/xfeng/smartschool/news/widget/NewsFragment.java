@@ -1,4 +1,4 @@
-package com.xfeng.smartschool.fragment;
+package com.xfeng.smartschool.news.widget;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,23 +11,18 @@ import com.xfeng.smartschool.R;
 
 /**
  * Created by xfeng
- * data 17/3/27 20:56
+ * data 17/3/27 20:27
  * email xfengv@yeah.net
  */
 
-public class StudentGuideFragment extends Fragment {
+public class NewsFragment extends Fragment{
     private static final String PARAM = "param";
     private String mParam;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_3_container, null);
+        View view = inflater.inflate(R.layout.frag_1_container, null);
         return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -39,16 +34,11 @@ public class StudentGuideFragment extends Fragment {
     }
 
 
-    public static StudentGuideFragment newInstance(String param) {
-        StudentGuideFragment fragment = new StudentGuideFragment();
+    public static NewsFragment newInstance(String param) {
+        NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
         args.putString(PARAM, param);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }

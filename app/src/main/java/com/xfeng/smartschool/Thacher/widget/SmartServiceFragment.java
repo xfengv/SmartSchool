@@ -1,4 +1,4 @@
-package com.xfeng.smartschool.fragment;
+package com.xfeng.smartschool.Thacher.widget;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

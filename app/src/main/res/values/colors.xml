@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#0097a7</color>
+    <color name="colorPrimary">#00bbd2</color>
     <color name="colorAccent">#FF4081</color>
 
     <!--亮蓝灰 -->
     <color name="slategray">#C2C2C2</color>
+
+    <color name="primary_light">#FFCDD2</color>
 
     <!--中暗蓝色 -->
     <color name="lightslategray">#55778899</color>

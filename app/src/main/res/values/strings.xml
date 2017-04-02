@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">SmartSchool</string>
-    <string name="name">zhangxiafeng</string>
-    <string name="navigation_news">新闻</string>
-    <string name="navigation_images">图片</string>
-    <string name="navigation_weather">天气</string>
-    <string name="navigation_about">关于</string>
+    <string name="app_name">智慧校园(沈理版)</string>
+    <string name="name">张夏风</string>
+    <string name="navigation_news">校园服务</string>
+    <string name="navigation_images">校园图片</string>
+    <string name="navigation_weather">本地天气</string>
+    <string name="navigation_about">关于作者</string>
 
     <!--主页tab-->
     <dimen name="main_bottom_tabs_padding_bottom">1dp</dimen>
@@ -18,6 +18,4 @@
     <string name="main_tab_third">新生引导</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
-
-
 </resources>
