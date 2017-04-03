@@ -9,8 +9,8 @@
     <!--主页tab-->
     <dimen name="main_bottom_tabs_padding_bottom">1dp</dimen>
     <dimen name="main_bottom_tab_padding_top">2dp</dimen>
-    <dimen name="main_bottom_tab_font_size">14sp</dimen>
-    <dimen name="main_bottom_tab_drawable_padding">2dp</dimen>
+    <dimen name="main_bottom_tab_font_size">15sp</dimen>
+    <dimen name="main_bottom_tab_drawable_padding">1dp</dimen>
 
     <!--tabs 简便用 first second third-->
     <string name="main_tab_first">校园资讯</string>
