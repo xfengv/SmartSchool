@@ -18,4 +18,8 @@
     <string name="main_tab_third">新生引导</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
+    <string name="school_news">校园新闻</string>
+    <string name="communicate">学术交流</string>
+    <string name="learning">考研动态</string>
+    <string name="job">就业招聘</string>
 </resources>

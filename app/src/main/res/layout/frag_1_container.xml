@@ -1,98 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
-
-    <ScrollView
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="300dp"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上帝是个无耻的老赌徒，他抛弃了我们！
-弱小和无知，都不是生存的障碍，傲慢才是。"/>
+            android:layout_height="?attr/actionBarSize"
+            app:tabIndicatorColor="@color/icons"/>
+    </android.support.design.widget.AppBarLayout>
 
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
