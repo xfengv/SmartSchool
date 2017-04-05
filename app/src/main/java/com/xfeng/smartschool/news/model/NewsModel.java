@@ -6,7 +6,7 @@ package com.xfeng.smartschool.news.model;
  * email xfengv@yeah.net
  */
 
-public interface NewModel {
+public interface NewsModel {
 
     void loadNews(String url, int type, OnLoadNewsListListener listener);
     void loadNewsDetail(String docid, OnLoadNewsDetailListener listener);

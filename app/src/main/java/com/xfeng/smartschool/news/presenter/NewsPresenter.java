@@ -7,5 +7,6 @@ package com.xfeng.smartschool.news.presenter;
  */
 
 public interface NewsPresenter {
+    //获取新闻的逻辑
     void loadNews(int type, int page);
 }
