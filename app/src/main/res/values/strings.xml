@@ -22,4 +22,5 @@
     <string name="communicate">学术交流</string>
     <string name="learning">考研动态</string>
     <string name="job">就业招聘</string>
+    <string name="load_fail">加载数据失败,请检查您的网络设置</string>
 </resources>

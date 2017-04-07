@@ -10,6 +10,5 @@ import com.xfeng.smartschool.beans.NewsDetailBean;
 
 public interface OnLoadNewsDetailListener {
     void onSuccess(NewsDetailBean newsDetailBean);
-
     void onFailure(String msg, Exception e);
 }

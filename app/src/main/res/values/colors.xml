@@ -30,4 +30,5 @@
     <!--列表展示的浅灰色背景 让白色的item更加突出-->
     <color name="list_background">#E5E5E5</color>
     <color name="list_background_dark">@color/window_background_dark</color>
+    <color name="secondary_text">#727272</color>
 </resources>
