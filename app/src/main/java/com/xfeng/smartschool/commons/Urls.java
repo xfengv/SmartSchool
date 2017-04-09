@@ -31,8 +31,11 @@ public class Urls {
     // nba
     public static final String NBA_ID = "T1348649145984";
 
+    //智慧服务
+    public static final String SMART_SERVICR = "http://10.0.2.2:8080/smartschool/smartservice1.json";
+
     // 图片
-    public static final String IMAGES_URL = "http://api.laifudao.com/open/tupian.json";
+    public static final String IMAGES_URL = "http://10.0.2.2:8080/zhbj/photos/photos_1.json";
 
     // 天气预报url
     public static final String WEATHER = "http://wthrcdn.etouch.cn/weather_mini?city=";
