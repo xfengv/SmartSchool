@@ -13,26 +13,34 @@ public class Urls {
 
     public static final int PAZE_SIZE = 20;
 
-    public static final String HOST = "http://c.m.163.com/";
-    public static final String END_URL = "-" + PAZE_SIZE + ".html";
+    //public static final String HOST = "http://c.m.163.com/";
+    public static final String HOST = "http://10.0.2.2:8080/";
+
+    public static final String END_URL = "";
     public static final String END_DETAIL_URL = "/full.html";
-    // 头条
-    public static final String TOP_URL = HOST + "nc/article/headline/";
-    public static final String TOP_ID = "T1348647909107";
+
+
+
+
+    public static final String TOP_URL = HOST + "smartschool/news/";
     // 新闻详情
-    public static final String NEW_DETAIL = HOST + "nc/article/";
+    public static final String NEW_DETAIL = HOST + "smartschool/news/";
 
-    public static final String COMMON_URL = HOST + "nc/article/list/";
+    public static final String COMMON_URL = HOST + "smartschool/news/";
 
+
+
+
+    public static final String TOP_ID = "shcoolnews/schoolnews1.json";
     // 汽车
-    public static final String CAR_ID = "T1348654060988";
+    public static final String CAR_ID = "communicate/communicate1.json";
     // 笑话
-    public static final String JOKE_ID = "T1350383429665";
+    public static final String JOKE_ID = "learning/learning1.json";
     // nba
-    public static final String NBA_ID = "T1348649145984";
+    public static final String NBA_ID = "job/job1.json";
 
     //智慧服务
-    public static final String SMART_SERVICR = "http://10.0.2.2:8080/smartschool/smartservice1.json";
+    public static final String SMART_SERVICR = HOST+"/smartschool/smartservice1.json";
 
     // 图片
     public static final String IMAGES_URL = "http://10.0.2.2:8080/zhbj/photos/photos_1.json";

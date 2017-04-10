@@ -18,13 +18,13 @@ public class TeacherBean {
     /**
      * 信息分类
      */
-    private String imageuri;
+    private String tab;
     /**
      * 标题
      */
     private String title;
     /**
-     * 信息分类
+     * 学院
      */
     private String major;
     /**
@@ -34,6 +34,24 @@ public class TeacherBean {
     /**
      * url
      */
+    private String url;
+
+    public String getTab() {
+        return tab;
+    }
+
+    public void setTab(String tab) {
+        this.tab = tab;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public String getTeacher() {
         return teacher;
     }
@@ -50,13 +68,6 @@ public class TeacherBean {
         this.course = course;
     }
 
-    public String getImageuri() {
-        return imageuri;
-    }
-
-    public void setImageuri(String imageuri) {
-        this.imageuri = imageuri;
-    }
 
     public String getTitle() {
         return title;

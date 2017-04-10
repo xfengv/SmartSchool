@@ -29,6 +29,7 @@ public class NewsJsonUtils {
      * @return
      */
     public static List<NewsBean> readJsonNewsBeans(String res, String value) {
+        LogUtils.i(TAG,res);
         List<NewsBean> beans = new ArrayList<NewsBean>();
         try {
             JsonParser parser = new JsonParser();

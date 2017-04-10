@@ -66,7 +66,7 @@ public class NewsPresenterImpl implements NewsPresenter,OnLoadNewsListListener{
                 sb.append(Urls.TOP_URL).append(Urls.TOP_ID);
                 break;
         }
-        sb.append("/").append(page).append(Urls.END_URL);
+        sb.append(Urls.END_URL);
         return sb.toString();
     }
 

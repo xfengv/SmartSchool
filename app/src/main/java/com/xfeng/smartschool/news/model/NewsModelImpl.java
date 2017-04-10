@@ -16,9 +16,12 @@ import java.util.List;
  */
 
 public class NewsModelImpl implements NewsModel {
+    public static  String TAG ="NewsModelImpl";
     @Override
     public void loadNews(String url, final int type, final OnLoadNewsListListener listener) {
         OkHttpUtils.ResultCallback<String> loadNewsCallback = new OkHttpUtils.ResultCallback<String>() {
+
+
             @Override
             public void onSuccess(String response) {
                 List<NewsBean> newsBeanList = NewsJsonUtils.readJsonNewsBeans(response, getID(type));

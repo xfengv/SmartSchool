@@ -28,7 +28,7 @@ public class TeacherJsonUtils {
         try {
             JsonParser parser = new JsonParser();
             JsonArray jsonArray = parser.parse(res).getAsJsonArray();
-            for (int i = 1; i < jsonArray.size(); i++) {
+            for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject jo = jsonArray.get(i).getAsJsonObject();
                 TeacherBean news = JsonUtils.deserialize(jo, TeacherBean.class);
                 beans.add(news);

@@ -1,8 +1,12 @@
 package com.xfeng.smartschool.Thacher.widget;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +33,31 @@ public class SmartServiceFragment extends Fragment implements TeacherView{
     private static final String PARAM = "param";
     private String mParam;
     private TeacherPresentImpl mTeacherPresent;
+    private RecyclerView mRecyclerView;
+    private MyAdapter mMyAdapter;
+    private Context mContext;
+    private LinearLayoutManager mLinearLayoutManager;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.mContext=context;
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_2_container, null);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+        mLinearLayoutManager = new LinearLayoutManager(mContext);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        mMyAdapter = new MyAdapter(mContext);
+        mRecyclerView.setAdapter(mMyAdapter);
+
         onRefresh();
         return view;
     }
@@ -67,6 +91,10 @@ public class SmartServiceFragment extends Fragment implements TeacherView{
         }
         mData.clear();
         mData.addAll(list);
+
+        mMyAdapter.setmDate(mData);
+
+
 
         ListIterator<TeacherBean> teacherBeanListIterator = mData.listIterator();
         while (teacherBeanListIterator.hasNext()){

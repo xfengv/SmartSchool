@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    xmlns:card_view="http://schemas.android.com/tools"
-                                    android:layout_marginBottom="@dimen/card_margin"
-                                    android:layout_marginLeft="@dimen/card_margin"
-                                    android:layout_marginRight="@dimen/card_margin"
-                                    card_view:cardCornerRadius="10dp"
                                     android:clickable="true">
 
     <LinearLayout
+        android:id="@+id/item_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:layout_marginBottom="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
         android:background="@drawable/shape_corner_red"
-
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_marginRight="5dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/tab"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:ems="1"
+            android:layout_marginLeft="5dp"
             android:text="考试信息"
-            android:textSize="20sp"
+            android:textSize="14sp"
             />
 
         <LinearLayout
@@ -36,62 +33,72 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:orientation="horizontal">
+                android:layout_marginLeft="8dp">
 
                 <TextView
                     android:id="@+id/teacher_name"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
                     android:singleLine="true"
                     android:text="王俊杰"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="#4D4D4D"
-                    android:textSize="20sp"/>
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:id="@+id/course"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_alignParentRight="true"
                     android:layout_gravity=""
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
                     android:singleLine="true"
                     android:text="计算机网络"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="#4D4D4D"
-                    android:textSize="20sp"/>
+                    android:textSize="14sp"/>
             </RelativeLayout>
-
-
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-            <TextView
-                android:padding="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="计算机网络期末考试时间及范围"
-                android:singleLine="true"
-                android:textSize="23sp"/>
+                >
 
                 <TextView
+                    android:id="@+id/item_titie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="8dp"
-                    android:text="2017-7-7"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="true"
+                    android:text="计算机网络期末考试时间及范围"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/item_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_titie"
                     android:textColor="#4D4D4D"
+                    android:singleLine="true"
+                    android:text="期末考试将在6月10号进行,考试范围有http协议及课后习题和平时老师"
+                    android:textSize="12sp"/>
+
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:text="2017-7-7"
+                    android:textSize="10sp"
+                    />
             </RelativeLayout>
         </LinearLayout>
 
