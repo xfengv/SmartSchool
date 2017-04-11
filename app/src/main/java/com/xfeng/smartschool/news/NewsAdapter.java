@@ -10,9 +10,13 @@ import android.widget.TextView;
 
 import com.xfeng.smartschool.R;
 import com.xfeng.smartschool.beans.NewsBean;
+import com.xfeng.smartschool.commons.Urls;
 import com.xfeng.smartschool.utils.ImageLoaderUtils;
+import com.xfeng.smartschool.utils.LogUtils;
 
 import java.util.List;
+
+import static com.xfeng.smartschool.news.model.NewsModelImpl.TAG;
 
 /**
  * Created by xfeng
@@ -72,16 +76,18 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if(holder instanceof ItemViewHolder) {
-
             NewsBean news = mData.get(position);
             if(news == null) {
                 return;
             }
+
             ((ItemViewHolder) holder).mTitle.setText(news.getTitle());
             ((ItemViewHolder) holder).mDesc.setText(news.getDigest());
 //            Uri uri = Uri.parse(news.getImgsrc());
 //            ((ItemViewHolder) holder).mNewsImg.setImageURI(uri);
-            ImageLoaderUtils.display(mContext, ((ItemViewHolder) holder).mNewsImg, news.getImgsrc());
+            String imageurl= Urls.TOP_URL+news.getImgsrc();
+            LogUtils.i(TAG,"getImgsrc"+imageurl);
+            ImageLoaderUtils.display(mContext, ((ItemViewHolder) holder).mNewsImg, imageurl);
         }
     }
 

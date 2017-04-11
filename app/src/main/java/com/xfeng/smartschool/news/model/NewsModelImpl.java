@@ -64,19 +64,19 @@ public class NewsModelImpl implements NewsModel {
         String id;
         switch (type) {
             case NewsFragment.NEWS_TYPE_SCHOOL_NEWS:
-                id = Urls.TOP_ID;
+                id = Urls.NEWS_ID;
                 break;
             case NewsFragment.NEWS_TYPE_COMMUNICATE:
-                id = Urls.NBA_ID;
+                id = Urls.COMMUN_ID;
                 break;
             case NewsFragment.NEWS_TYPE_LEARNING:
-                id = Urls.CAR_ID;
+                id = Urls.LEARN_ID;
                 break;
             case NewsFragment.NEWS_TYPE_JOB:
-                id = Urls.JOKE_ID;
+                id = Urls.JOB_ID;
                 break;
             default:
-                id = Urls.TOP_ID;
+                id = Urls.NEWS_ID;
                 break;
         }
         return id;

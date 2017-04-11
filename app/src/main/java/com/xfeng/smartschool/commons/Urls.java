@@ -16,7 +16,6 @@ public class Urls {
     //public static final String HOST = "http://c.m.163.com/";
     public static final String HOST = "http://10.0.2.2:8080/";
 
-    public static final String END_URL = "";
     public static final String END_DETAIL_URL = "/full.html";
 
 
@@ -31,13 +30,28 @@ public class Urls {
 
 
 
-    public static final String TOP_ID = "shcoolnews/schoolnews1.json";
+    public static final String NEWS_ID = "shcoolnews";
+
+    public static final String COMMUN_ID = "communicate";
+
+    public static final String LEARN_ID = "learning";
+
+    public static final String JOB_ID = "job";
+
+
+
+    public static final String NEWS_JSON = "/schoolnews1.json";
     // 汽车
-    public static final String CAR_ID = "communicate/communicate1.json";
+    public static final String COMMUN_JSON = "/communicate2.json";
     // 笑话
-    public static final String JOKE_ID = "learning/learning1.json";
+    public static final String LEARN_JSON = "/learning2.json";
     // nba
-    public static final String NBA_ID = "job/job1.json";
+    public static final String JOB_JSON = "/job2.json";
+
+
+
+
+
 
     //智慧服务
     public static final String SMART_SERVICR = HOST+"/smartschool/smartservice1.json";

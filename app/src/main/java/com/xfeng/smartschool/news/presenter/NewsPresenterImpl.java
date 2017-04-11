@@ -31,7 +31,7 @@ public class NewsPresenterImpl implements NewsPresenter,OnLoadNewsListListener{
 
 
     @Override
-    public void loadNews(int type, int page) {
+    public void loadNews(final int type,final int page) {
         String url = getUrl(type, page);
         LogUtils.d(TAG, url);
         //只有第一页的或者刷新的时候才显示刷新进度条
@@ -51,22 +51,21 @@ public class NewsPresenterImpl implements NewsPresenter,OnLoadNewsListListener{
         StringBuffer sb = new StringBuffer();
         switch (type) {
             case NewsFragment.NEWS_TYPE_SCHOOL_NEWS:
-                sb.append(Urls.TOP_URL).append(Urls.TOP_ID);
+                sb.append(Urls.TOP_URL).append(Urls.NEWS_ID).append(Urls.NEWS_JSON);
                 break;
             case NewsFragment.NEWS_TYPE_COMMUNICATE:
-                sb.append(Urls.COMMON_URL).append(Urls.NBA_ID);
+                sb.append(Urls.COMMON_URL).append(Urls.COMMUN_ID).append(Urls.COMMUN_JSON);
                 break;
             case NewsFragment.NEWS_TYPE_LEARNING:
-                sb.append(Urls.COMMON_URL).append(Urls.CAR_ID);
+                sb.append(Urls.COMMON_URL).append(Urls.LEARN_ID).append(Urls.LEARN_JSON);
                 break;
             case NewsFragment.NEWS_TYPE_JOB:
-                sb.append(Urls.COMMON_URL).append(Urls.JOKE_ID);
+                sb.append(Urls.COMMON_URL).append(Urls.JOB_ID).append(Urls.JOB_JSON);
                 break;
             default:
-                sb.append(Urls.TOP_URL).append(Urls.TOP_ID);
+                sb.append(Urls.TOP_URL).append(Urls.NEWS_ID).append(Urls.NEWS_JSON);
                 break;
         }
-        sb.append(Urls.END_URL);
         return sb.toString();
     }
 

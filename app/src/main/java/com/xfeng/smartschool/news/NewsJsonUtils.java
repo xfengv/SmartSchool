@@ -29,7 +29,7 @@ public class NewsJsonUtils {
      * @return
      */
     public static List<NewsBean> readJsonNewsBeans(String res, String value) {
-        LogUtils.i(TAG,res);
+        LogUtils.i(TAG,res+value);
         List<NewsBean> beans = new ArrayList<NewsBean>();
         try {
             JsonParser parser = new JsonParser();
@@ -39,19 +39,10 @@ public class NewsJsonUtils {
                 return null;
             }
             JsonArray jsonArray = jsonElement.getAsJsonArray();
-            for (int i = 1; i < jsonArray.size(); i++) {
+            for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject jo = jsonArray.get(i).getAsJsonObject();
-                if (jo.has("skipType") && "special".equals(jo.get("skipType").getAsString())) {
-                    continue;
-                }
-                if (jo.has("TAGS") && !jo.has("TAG")) {
-                    continue;
-                }
-
-                if (!jo.has("imgextra")) {
                     NewsBean news = JsonUtils.deserialize(jo, NewsBean.class);
                     beans.add(news);
-                }
             }
         } catch (Exception e) {
             LogUtils.e(TAG, "readJsonNewsBeans error" , e);
