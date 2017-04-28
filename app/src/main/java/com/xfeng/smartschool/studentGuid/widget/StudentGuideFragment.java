@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bm.library.PhotoView;
 import com.xfeng.smartschool.R;
 
 /**
@@ -18,10 +19,14 @@ import com.xfeng.smartschool.R;
 public class StudentGuideFragment extends Fragment {
     private static final String PARAM = "param";
     private String mParam;
+    private PhotoView mSchoolMap;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_3_container, null);
+        mSchoolMap = (PhotoView) view.findViewById(R.id.school_map);
+        mSchoolMap.enable();
         return view;
     }
 

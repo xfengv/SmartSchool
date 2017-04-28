@@ -5,9 +5,24 @@
               android:orientation="vertical">
 
     <TextView
-        android:paddingTop="188dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fragment3"/>
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="双指可以缩放,旋转哦"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"/>
+
+        <com.bm.library.PhotoView
+            android:id="@+id/school_map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/schoolmap"/>
+
+
+
 </LinearLayout>
