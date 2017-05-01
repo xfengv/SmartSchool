@@ -1,5 +1,6 @@
 package com.xfeng.smartschool.news.widget;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -65,7 +66,18 @@ public class NewsListFragment extends Fragment implements NewsView,SwipeRefreshL
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new NewsAdapter(getActivity().getApplicationContext());
-        //mAdapter.setOnItemClickListener(mOnItemClickListener);
+        mAdapter.setOnItemClickListener(new NewsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                // 跳转新闻详情页
+                LogUtils.i(TAG,"getActivity"+getActivity());
+                Intent intent = new Intent(getActivity(), NewsDetileActivity.class);
+                LogUtils.i(TAG,Urls.TOP_URL+Urls.NEWS_ID+"schoolnewsdetails/schoolnewsdetails.html");
+                intent.putExtra("url",Urls.TOP_URL+Urls.NEWS_ID+"/schoolnewsdetails/schoolnewsdetails.html");
+                startActivity(intent);
+
+            }
+        });
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.addOnScrollListener(mOnScrollListener);
         onRefresh();

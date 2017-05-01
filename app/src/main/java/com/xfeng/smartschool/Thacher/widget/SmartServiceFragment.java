@@ -1,6 +1,7 @@
 package com.xfeng.smartschool.Thacher.widget;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,8 @@ import com.xfeng.smartschool.R;
 import com.xfeng.smartschool.Thacher.presenter.TeacherPresentImpl;
 import com.xfeng.smartschool.Thacher.view.TeacherView;
 import com.xfeng.smartschool.beans.TeacherBean;
+import com.xfeng.smartschool.commons.Urls;
+import com.xfeng.smartschool.news.widget.NewsDetileActivity;
 import com.xfeng.smartschool.utils.LogUtils;
 
 import java.util.ArrayList;
@@ -55,7 +58,17 @@ public class SmartServiceFragment extends Fragment implements TeacherView{
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
+
         mMyAdapter = new MyAdapter(mContext);
+        mMyAdapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(getActivity(), NewsDetileActivity.class);
+                intent.putExtra("url",Urls.HOST+"smartschool/smartservice/smartservicedetials.html");
+                startActivity(intent);
+            }
+        });
         mRecyclerView.setAdapter(mMyAdapter);
 
         onRefresh();

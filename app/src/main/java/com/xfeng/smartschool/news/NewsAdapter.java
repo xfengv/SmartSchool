@@ -43,6 +43,11 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         this.notifyDataSetChanged();
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
+
     @Override
     public int getItemViewType(int position) {
         // 最后一个item设置为footerView
@@ -112,9 +117,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return this.mShowFooter;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.mOnItemClickListener = onItemClickListener;
-    }
+
 
     public class FooterViewHolder extends RecyclerView.ViewHolder {
 

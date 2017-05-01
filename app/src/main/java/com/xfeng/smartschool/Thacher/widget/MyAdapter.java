@@ -25,6 +25,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
     private final Context mContext;
     private List<TeacherBean> mData;
     private final LayoutInflater mInflater;
+    private OnItemClickListener mOnItemClickListener;
 
     MyAdapter(Context context) {
         mContext = context;
@@ -35,6 +36,10 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
         this.mData = data;
         this.notifyDataSetChanged();
     }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.mOnItemClickListener = onItemClickListener;
+    }
+
 
 
     @Override
@@ -43,6 +48,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
         MusicListHolder musicListHolder = new MusicListHolder(view);
         return musicListHolder;
     }
+
+
 
     @Override
     public void onBindViewHolder(MusicListHolder holder, int position) {
@@ -58,18 +65,18 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
                 holder.mItemBackground.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.shape_corner_green));
                 break;
             case "老师要求":
-                holder.mItemBackground.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.shape_corner_yell));
+                 holder.mItemBackground.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.shape_corner_yell));
                 break;
             default:
                 break;
         }
 
-        holder.mContent.setText(musicInfo.getMajor());
-        holder.mCourse.setText(musicInfo.getCourse());
-        holder.mMItemTitie.setText(musicInfo.getTitle());
-        holder.mTab.setText(musicInfo.getTab());
-        holder.mTime.setText(musicInfo.getTime());
-        holder.mTeacherName.setText(musicInfo.getTeacher());
+         holder.mContent.setText(musicInfo.getMajor());
+         holder.mCourse.setText(musicInfo.getCourse());
+         holder.mMItemTitie.setText(musicInfo.getTitle());
+         holder.mTab.setText(musicInfo.getTab());
+         holder.mTime.setText(musicInfo.getTime());
+         holder.mTeacherName.setText(musicInfo.getTeacher());
     }
 
     @Override
@@ -79,8 +86,10 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
         }
         return mData.size();
     }
-
-    class MusicListHolder extends RecyclerView.ViewHolder {
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+    class MusicListHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView mContent;
         TextView mTab;
@@ -99,6 +108,14 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
             mCourse = (TextView) itemView.findViewById(R.id.course);
             mTime = (TextView) itemView.findViewById(R.id.time);
             mItemBackground = (LinearLayout) itemView.findViewById(R.id.item_background);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if(mOnItemClickListener != null) {
+                mOnItemClickListener.onItemClick(view, this.getPosition());
+            }
         }
     }
 }
