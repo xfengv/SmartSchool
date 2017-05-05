@@ -1,4 +1,4 @@
-package com.xfeng.smartschool.images.widget;
+package com.xfeng.smartschool.book.widget;
 
 import android.content.Context;
 import android.os.Bundle;

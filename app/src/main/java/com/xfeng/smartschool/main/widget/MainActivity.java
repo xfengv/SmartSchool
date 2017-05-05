@@ -22,7 +22,7 @@ import android.widget.RadioGroup;
 import com.xfeng.smartschool.R;
 import com.xfeng.smartschool.aboutme.widget.AboutMeFragment;
 import com.xfeng.smartschool.main.FragmentFactory;
-import com.xfeng.smartschool.images.widget.ImageFragment;
+import com.xfeng.smartschool.book.widget.ImageFragment;
 import com.xfeng.smartschool.news.widget.NewsFragment;
 import com.xfeng.smartschool.main.view.MainView;
 import com.xfeng.smartschool.main.presenter.SidePresenter;

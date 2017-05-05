@@ -1,4 +1,4 @@
-package com.xfeng.smartschool.images.widget;
+package com.xfeng.smartschool.book.widget;
 
 /**
  * Created by xfengimac
