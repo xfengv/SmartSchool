@@ -15,11 +15,11 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             >
 
-            <!--本文主角-->
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/grid_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="图书漂流"
+                android:textSize="30sp"/>
         </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
