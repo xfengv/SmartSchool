@@ -55,7 +55,7 @@ public class NewsFragment extends Fragment{
         adapter.addFragment(NewsListFragment.newInstance(NEWS_TYPE_SCHOOL_NEWS), getString(R.string.school_news));
         adapter.addFragment(NewsListFragment.newInstance(NEWS_TYPE_COMMUNICATE), getString(R.string.communicate));
         adapter.addFragment(NewsListFragment.newInstance(NEWS_TYPE_LEARNING), getString(R.string.learning));
-        adapter.addFragment(NewsListFragment.newInstance(NEWS_TYPE_JOB), getString(R.string.job));
+        adapter.addFragment(NewsListFragment.newInstance(NEWS_TYPE_LEARNING), getString(R.string.job));
         mViewPager.setAdapter(adapter);
     }
 
