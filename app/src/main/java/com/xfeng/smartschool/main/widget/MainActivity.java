@@ -21,12 +21,12 @@ import android.widget.RadioGroup;
 
 import com.xfeng.smartschool.R;
 import com.xfeng.smartschool.aboutme.widget.AboutMeFragment;
+import com.xfeng.smartschool.books.widget.ImageFragment;
 import com.xfeng.smartschool.main.FragmentFactory;
-import com.xfeng.smartschool.book.widget.ImageFragment;
-import com.xfeng.smartschool.news.widget.NewsFragment;
-import com.xfeng.smartschool.main.view.MainView;
 import com.xfeng.smartschool.main.presenter.SidePresenter;
 import com.xfeng.smartschool.main.presenter.SidePreshenterImpl;
+import com.xfeng.smartschool.main.view.MainView;
+import com.xfeng.smartschool.news.widget.NewsFragment;
 import com.xfeng.smartschool.weather.widget.WeatherFragment;
 
 public class MainActivity extends AppCompatActivity implements MainView {

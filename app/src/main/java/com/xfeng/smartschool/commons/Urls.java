@@ -19,6 +19,11 @@ public class Urls {
     public static final String END_DETAIL_URL = "/full.html";
 
 
+    public static final String BOOK_URL = HOST+"smartschool/book/book.json";
+
+
+
+
 
 
     public static final String TOP_URL = HOST + "smartschool/news/";
