@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.xfeng.smartschool.R;
 import com.xfeng.smartschool.beans.Meizi;
+import com.xfeng.smartschool.commons.Urls;
 import com.xfeng.smartschool.utils.ImageLoaderUtils;
 import com.xfeng.smartschool.utils.LogUtils;
 
@@ -60,9 +62,10 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
         if (musicInfo == null) {
             return;
         }
-        String imageurl= musicInfo.getUrl();
+        String imageurl= Urls.HOST_hah+musicInfo.getUrl();
         LogUtils.i(TAG,"getImgsrc"+imageurl);
-        ImageLoaderUtils.display(mContext, holder.mImageButton, imageurl);
+        holder.mTitle.setText(musicInfo.getSource());
+        ImageLoaderUtils.display(mContext, holder.mImage, imageurl);
     }
 
     @Override
@@ -77,11 +80,13 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MusicListHolder> {
     }
     class MusicListHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        ImageButton mImageButton;
+        ImageView mImage;
+        TextView mTitle;
 
         public MusicListHolder(View itemView) {
             super(itemView);
-            mImageButton = (ImageButton) itemView.findViewById(R.id.iv);
+            mImage = (ImageView) itemView.findViewById(R.id.masonry_item_img);
+            mTitle = (TextView) itemView.findViewById(R.id.masonry_item_title);
             itemView.setOnClickListener(this);
         }
 

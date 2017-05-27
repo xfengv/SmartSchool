@@ -16,6 +16,8 @@ public class Urls {
     //public static final String HOST = "http://c.m.163.com/";
     public static final String HOST = "http://10.0.2.2:8080/";
 
+    public static final String HOST_hah = "http://10.0.2.2:8080/";
+
     public static final String END_DETAIL_URL = "/full.html";
 
 

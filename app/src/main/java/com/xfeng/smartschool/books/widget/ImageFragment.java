@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import com.xfeng.smartschool.books.view.TeacherView;
 import com.xfeng.smartschool.commons.Urls;
 import com.xfeng.smartschool.news.widget.NewsDetileActivity;
 import com.xfeng.smartschool.utils.LogUtils;
+import com.xfeng.smartschool.utils.SpacesItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,8 @@ public class ImageFragment extends Fragment implements TeacherView {
     private MyAdapter mMyAdapter;
     private Context mContext;
     private LinearLayoutManager mLinearLayoutManager;
+    private GridLayoutManager mGridLayoutManager;
+    private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
 
     @Override
     public void onAttach(Context context) {
@@ -55,8 +60,10 @@ public class ImageFragment extends Fragment implements TeacherView {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
-        mLinearLayoutManager = new LinearLayoutManager(mContext);
-        mRecyclerView.setLayoutManager(mLinearLayoutManager);
+        //mLinearLayoutManager = new LinearLayoutManager(mContext);
+        //mGridLayoutManager = new GridLayoutManager(mContext, 3, GridLayoutManager.VERTICAL, false);
+        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
@@ -66,11 +73,14 @@ public class ImageFragment extends Fragment implements TeacherView {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), NewsDetileActivity.class);
-                intent.putExtra("url",Urls.HOST+"smartschool/smartservice/smartservicedetials.html");
+                intent.putExtra("url",Urls.HOST+"smartschool/book/bookde.html");
                 startActivity(intent);
             }
         });
         mRecyclerView.setAdapter(mMyAdapter);
+
+        SpacesItemDecoration decoration=new SpacesItemDecoration(6);
+        mRecyclerView.addItemDecoration(decoration);
 
         onRefresh();
         return view;

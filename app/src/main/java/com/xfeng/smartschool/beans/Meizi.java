@@ -10,6 +10,15 @@ public class Meizi {
 
     private String url;//图片地址
     private int page;//页数
+    private String source;
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
 
     public String getUrl() {
         return url;
