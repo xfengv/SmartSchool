@@ -1,12 +1,6 @@
 package com.xfeng.smartschool.commons;
 
-/**
- * Description : 接口API的URL
- * Author : lauren
- * Email  : lauren.liuling@gmail.com
- * Blog   : http://www.liuling123.com
- * Date   : 15/12/13
- */
+
 public class Urls {
 
     //http://c.m.163.com/nc/article/headline/T1348647909107/0-5.html  头条
@@ -14,9 +8,22 @@ public class Urls {
     public static final int PAZE_SIZE = 20;
 
     //public static final String HOST = "http://c.m.163.com/";
-    public static final String HOST = "http://10.0.2.2:8080/";
+    //虚拟机
+    //public static final String HOST = "http://10.0.2.2:8080/";
+    //新浪云
+    public static final String HOST = "http://smartschool.applinzi.com/";
+    //局域网
+    //public static final String HOST = "http://192.168.2.133:8080/";
+    //
+    //public static final String HOST = "http://git.oschina.net/xfengv/smartschooldata/raw/master/";
 
-    public static final String HOST_hah = "http://10.0.2.2:8080/";
+
+
+
+    //public static final String HOST_hah = "http://10.0.2.2:8080/";
+    public static final String HOST_hah = "http://smartschool.applinzi.com/";
+    //public static final String HOST_hah = "http://192.168.2.133:8080/";
+    //public static final String HOST_hah = "http://git.oschina.net/xfengv/smartschooldata/raw/master/";
 
     public static final String END_DETAIL_URL = "/full.html";
 

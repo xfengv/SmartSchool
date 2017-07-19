@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keyschool'
+            keyPassword 'Zz916619916'
+            storeFile file('/Users/xfengmbp/Desktop/smartschool.jks')
+            storePassword 'Zz916619916'
+            v1SigningEnabled false
+            v2SigningEnabled false
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -15,6 +25,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
